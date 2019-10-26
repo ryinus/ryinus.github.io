@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <iframe id="player" type="text/html" width="640" height="390"
+  src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
+  frameborder="0"></iframe>
+    
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <div id="player"></div>
 
@@ -35,7 +39,7 @@
       // 5. The API calls this function when the player's state changes.
       //    The function indicates that when playing a video (state=1),
       //    the player should play for six seconds and then stop.
-      var done = false;
+      /* var done = false;
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING && !done) {
           setTimeout(stopVideo, 6000);
@@ -44,7 +48,7 @@
       }
       function stopVideo() {
         player.stopVideo();
-      }
+      } */
     </script>
   </body>
 </html>
