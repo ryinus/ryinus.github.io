@@ -2,6 +2,7 @@
 <html>
   <body>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    <button id="button">Click me</button>
     <div id="player"></div>
 
     <script>
@@ -15,11 +16,12 @@
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
       var player;
-      function onYouTubeIframeAPIReady() {
+      document.getElementById("button").addEventListener("click", button);
+      function button() { //onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-          //to remove controls
+          //to remove controls and YouTube logo
           playerVars: { 'controls': 0, 'modestbranding': 1 },
           events: {
             'onReady': onPlayerReady,
