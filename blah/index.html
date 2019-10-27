@@ -36,21 +36,16 @@
       */
       
       //to create a "live feed" with dynamically built playlist
-      var vids = ['Jia70E4FH2E', 'gz5sqsRJksE', 'sCcLY7KVnrE'];
+      var vids = ['4eegr0W_C5c', '4eegr0W_C5c', 'Jia70E4FH2E', 'gz5sqsRJksE', 'sCcLY7KVnrE'];
       var INDEX = 1;
       function onPlayerReady(event) {
         player.loadVideoById(vids[0]);
-        setTimeout(stopVideo, 6000);
       }
       function onPlayerStateChange(event) {
         if (event.data === 0) {
           player.loadVideoById(vids[INDEX]);
           INDEX++;
-          setTimeout(stopVideo, 6000);
         }
-      }
-      function stopVideo() {
-        player.stopVideo();
       }
     </script>
   </body>
