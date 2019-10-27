@@ -20,12 +20,13 @@
           height: '390',
           width: '640',
           events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
+            'onReady': onPlayerReady
           }
         });
       }
-      player.loadPlaylist("kaQVCLehtRk",1)
+      function onPlayerReady(event) {
+        player.loadPlaylist("kaQVCLehtRk",1);
+      }
     </script>
   </body>
 </html>
