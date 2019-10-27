@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/f3N9WIGD-RU?controls=0" frameborder="0"></iframe>
+    <script>
+    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    <div id="player"></div>
+
+    <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      player.loadPlaylist(playlist:kaQVCLehtRk,index:1);
+    </script>
   </body>
 </html>
