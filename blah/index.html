@@ -26,12 +26,12 @@
         });
       }
       function onPlayerReady(event) {
-        player.loadPlaylist(['Jia70E4FH2E', 'gz5sqsRJksE']);
+        player.loadPlaylist('Jia70E4FH2E');
         //to load a whole playlist -> player.loadPlaylist({list:"PLMxOsrgGH8n49WElPVU1isa7ifuUkZFMf"});
       }
       function onPlayerStateChange(event) {
         if (event.data == 0) {
-          player.cueVideoById('Jia70E4FH2E');
+          player.loadVideoById('gz5sqsRJksE');
         }
       }
     </script>
