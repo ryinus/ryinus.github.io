@@ -5,7 +5,7 @@
     <!--<button id="button">Click me</button>-->
     <!--<div id="player"></div>-->
     <iframe id="player" type="text/html" width="640" height="390"
-            src="https://www.youtube.com/embed/playlist?list=PLMxOsrgGH8n49WElPVU1isa7ifuUkZFMf&origin=https://ryinus.github.io/blah/"
+            src="https://www.youtube.com/embed/playlist?list=PLMxOsrgGH8n49WElPVU1isa7ifuUkZFMf?enablejsapi=1&origin=https://ryinus.github.io/blah/"
             allow="autoplay; encrypted-media" allowfullscreen frameborder="0" loopPlaylists="true">
     </iframe>
     <script>
@@ -56,6 +56,24 @@
       }
       */
 
+        var tag = document.createElement('script');
+  tag.id = 'iframe-demo';
+  tag.src = 'https://www.youtube.com/iframe_api';
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('existing-iframe-example', {
+        events: {
+          'onReady': onPlayerReady
+        }
+    });
+  }
+  function onPlayerReady(event) {
+    player.setLoop(loopPlaylists:true);
+  }
+      
     </script>
   </body>
 </html>
