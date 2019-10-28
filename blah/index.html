@@ -16,13 +16,13 @@
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
       var player;
-      //document.getElementById("button").addEventListener("click", button);
-      function onYouTubeIframeAPIReady() { // button() {
+      document.getElementById("button").addEventListener("click", button);
+      function  button() { // onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
           height: '390',
           width: '640',
           //to remove controls and YouTube logo
-          playerVars: { 'controls': 0, 'modestbranding': 1 },
+          //playerVars: { 'controls': 0, 'modestbranding': 1 },
           events: {
             'onReady': onPlayerReady
             //'onStateChange': onPlayerStateChange
