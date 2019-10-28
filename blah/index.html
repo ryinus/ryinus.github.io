@@ -3,18 +3,22 @@
   <body>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <!--<button id="button">Click me</button>-->
-    <div id="player"></div>
-
+    <!--<div id="player"></div>-->
+    <iframe id="player" type="text/html" width="640" height="390"
+            src="http://www.youtube.com/embed/PLMxOsrgGH8n49WElPVU1isa7ifuUkZFMf?enablejsapi=1&origin=https://ryinus.github.io"
+            frameborder="0">
+    </iframe>
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
+      //var tag = document.createElement('script');
 
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      //tag.src = "https://www.youtube.com/iframe_api";
+      //var firstScriptTag = document.getElementsByTagName('script')[0];
+      //firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
+      /*
       var player;
       document.getElementById("button").addEventListener("click", button);
       function onYouTubeIframeAPIReady() { // button() {
@@ -29,13 +33,13 @@
           }
         });
       }
-      
+      */
       //to load a whole playlist
-      
+      /*
       function onPlayerReady(event) {
         player.loadPlaylist({list:"PLMxOsrgGH8n49WElPVU1isa7ifuUkZFMf"});
       }      
-      
+      */
       
       //to create a "live feed" with dynamically built playlist
       /*
