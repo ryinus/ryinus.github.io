@@ -797,13 +797,13 @@
           menu.removeAttribute('class');
           this.removeAttribute('class');
           this.setAttribute('aria-expanded', 'false');
+          this.blur();
         } else {
           menu.setAttribute('class', 'active');
           this.setAttribute('class', 'margin');
           this.setAttribute('aria-expanded', 'true');
           this.focus();
         }
-        event.stopPropagation();
       });
       window.addEventListener('scroll', function(event) {
         if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
@@ -813,7 +813,6 @@
             window.scrollTo(0, 0);
             toggle.setAttribute('aria-controls', 'menu');
             toggle.blur();
-            event.stopPropagation();
           });
         } else {
           toggle.innerText = 'Menu';
@@ -829,7 +828,6 @@
               this.setAttribute('aria-expanded', 'true');
               this.focus();
             }
-            event.stopPropagation();
           });
         }
       }, false);
