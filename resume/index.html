@@ -144,6 +144,10 @@
           padding-top: 1em;
           width: 90%
         }
+        .for-screen-readers {
+          display: none;
+          text-decoration: underline
+        }
 
         /* Links */
         a {
@@ -286,6 +290,23 @@
         }
       }
 
+      /* Double Extra Large Screens */
+      @media only screen and (min-width: 75em) {
+        #top {
+          background: transparent url("../images/projects/top.svg") -315px -432px no-repeat;
+          background-size: 1200px 720px;
+          bottom: 20px;
+          cursor: pointer;
+          height: 44px;
+          opacity: .5;
+          position: fixed;
+          right: 20px;
+          transform: rotate(180deg);
+          width: 44px;
+          z-index: 50;
+        }
+      }
+
       /* Hover */
       @media (hover:hover) {
         #toggle:hover {
@@ -323,7 +344,7 @@
           color: #000;
           text-decoration: none
         }
-        figure, footer, nav, .share  {
+        figure, footer, nav, .share, #top  {
           display: none
         }
         h3 {
@@ -342,6 +363,7 @@
   </head>
 
   <body>
+    <div id="top"><span class="for-screen-readers">Return to the top of the page</span></div>
     <header>
       <div id="header">
         <h1 id="logo"><a href="../">Ryan Young</a></h1>
@@ -526,6 +548,9 @@
           toggle.blur();
         }
       }, false);
+      top.addEventListener('click', function(event){
+        window.scrollTo(0, 0);
+      }, false);
       window.addEventListener('scroll', function(event) {
         if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
           toggle.innerText = '^ Top';
@@ -538,15 +563,15 @@
     </script>
     <noscript>
       <style>
-        #toggle {
-          display: none
+        main {
+          margin-top: 9em
         }
         #menu {
           display: block;
           margin-right: 0
         }
-        main {
-          margin-top: 9em
+        #toggle, #top {
+          display: none
         }
         @media only screen and (min-width: 35em) {
           main {
