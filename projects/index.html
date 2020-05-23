@@ -804,7 +804,7 @@
           this.setAttribute('aria-expanded', 'true');
           this.focus();
         }
-      });
+      }, false);
       window.addEventListener('scroll', function(event) {
         if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
           toggle.innerText = '^ Top';
@@ -813,7 +813,7 @@
             window.scrollTo(0, 0);
             toggle.setAttribute('aria-controls', 'menu');
             toggle.blur();
-          });
+          }, false);
         } else {
           toggle.innerText = 'Menu';
           toggle.addEventListener('click', function(event){
@@ -828,7 +828,7 @@
               this.setAttribute('aria-expanded', 'true');
               this.focus();
             }
-          });
+          }, false);
         }
       }, false);
     </script>
