@@ -811,6 +811,8 @@
           toggle.removeAttribute('aria-controls');
           toggle.addEventListener('click', function(event){
             window.scrollTo(0, 0);
+            toggle.setAttribute('aria-controls', 'menu');
+            toggle.blur();
             event.stopPropagation();
           });
         } else {
@@ -820,6 +822,7 @@
               menu.removeAttribute('class');
               this.removeAttribute('class');
               this.setAttribute('aria-expanded', 'false');
+              this.blur();
             } else {
               menu.setAttribute('class', 'active');
               this.setAttribute('class', 'margin');
