@@ -793,22 +793,22 @@
       navLinks[0].addEventListener('click', resetNav, false);
       navLinks[1].addEventListener('click', resetNav, false);
       toggle.addEventListener('click', function(event){
-        console.log(event);
-        /*
-            window.scrollTo(0, 0);
-            toggle.setAttribute('aria-controls', 'menu');
-            toggle.blur();
-        */
-        if (menu.classList.contains('active')) {
-          menu.removeAttribute('class');
-          this.removeAttribute('class');
-          this.setAttribute('aria-expanded', 'false');
-          this.blur();
+        if (event.target.innerText === 'Menu') {
+          if (menu.classList.contains('active')) {
+            menu.removeAttribute('class');
+            this.removeAttribute('class');
+            this.setAttribute('aria-expanded', 'false');
+            this.blur();
+          } else {
+            menu.setAttribute('class', 'active');
+            this.setAttribute('class', 'margin');
+            this.setAttribute('aria-expanded', 'true');
+            this.focus();
+          }
         } else {
-          menu.setAttribute('class', 'active');
-          this.setAttribute('class', 'margin');
-          this.setAttribute('aria-expanded', 'true');
-          this.focus();
+          window.scrollTo(0, 0);
+          toggle.setAttribute('aria-controls', 'menu');
+          toggle.blur();
         }
       }, false);
       window.addEventListener('scroll', function(event) {
@@ -817,6 +817,7 @@
           toggle.removeAttribute('aria-controls');
         } else {
           toggle.innerText = 'Menu';
+          toggle.setAttribute('aria-controls', 'menu');
         }
       }, false);
     </script>
