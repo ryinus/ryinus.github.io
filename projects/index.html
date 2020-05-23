@@ -784,26 +784,48 @@
     </footer>
 
     <script>
-      let toggle = document.querySelector('#toggle');
-      let menu = document.querySelector('#menu');
-      let navLinks = document.querySelectorAll('nav a');
+      const toggle = document.querySelector('#toggle');
+      const menu = document.querySelector('#menu');
+      const navLinks = document.querySelectorAll('nav a');
       function resetNav() {
-        menu.classList.remove('active');
+        menu.removeAttribute('class');
       }
       navLinks[0].addEventListener('click', resetNav, false);
       navLinks[1].addEventListener('click', resetNav, false);
-      toggle.addEventListener('click', function(){
+      /*toggle.addEventListener('click', function(){
         if (menu.classList.contains('active')) {
-          menu.classList.remove('active');
-          this.classList.remove('margin');
+          menu.removeAttribute('class');
+          this.removeAttribute('class');
           this.setAttribute('aria-expanded', 'false');
         } else {
-          menu.classList.add('active');
-          this.classList.add('margin');
+          menu.setAttribute('class', 'active');
+          this.setAttribute('class', 'margin');
           this.setAttribute('aria-expanded', 'true');
           this.focus();
         }
-      });
+      });*/
+      window.addEventListener('onscroll', function(event) {
+        if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+          toggle.innerText = '^ Top';
+          toggle.addEventListener('click', function(){
+            window.scrollTo(0, 0);
+          });
+        } else {
+          toggle.innerText = 'Menu';
+          toggle.addEventListener('click', function(){
+            if (menu.classList.contains('active')) {
+              menu.removeAttribute('class');
+              this.removeAttribute('class');
+              this.setAttribute('aria-expanded', 'false');
+            } else {
+              menu.setAttribute('class', 'active');
+              this.setAttribute('class', 'margin');
+              this.setAttribute('aria-expanded', 'true');
+              this.focus();
+            }
+          });
+        }
+      }, false);
     </script>
     <noscript>
       <style>
