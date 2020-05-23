@@ -97,12 +97,15 @@
           display: block;
           float: right;
           font: 1em sans-serif;
-	  margin-right: 0.2em;
-	  padding: 0.2em
+	        margin-right: 0.2em;
+	        padding: 0.2em
         }
         #toggle:focus {
           background: #333;
-          color: #FFF;
+          color: #FFF
+        }
+        .margin {
+          margin-bottom: 1em
         }
         nav ul {
           clear: both;
@@ -187,26 +190,11 @@
           max-width: 32em;
           width: 100%
         }
-        #profile {
-          clear: both;
-          display: block;
-          margin: 1em auto;
-          width: 27%
-        }
 
       }
 
       /* Medium Screens */
-      @media only screen and (min-width: 44em) {
-        figure {
-          float: right;
-          width: 40%;
-          margin: 0 0 1em 1em
-        }
-      }
-
-      /* Large Screens */
-      @media only screen and (min-width: 50em) {
+      @media only screen and (min-width: 35em) {
 
         body {
           margin-top: 0
@@ -279,6 +267,15 @@
           color: blue
         }
 
+      }
+
+      /* Large Screens */
+      @media only screen and (min-width: 44em) {
+        figure {
+          float: right;
+          width: 40%;
+          margin: 0 0 1em 1em
+        }
       }
 
       /* Extra Large Screens */
@@ -787,23 +784,22 @@
     </footer>
 
     <script>
-      var toggle = document.querySelector('#toggle');
-      var menu = document.querySelector('#menu');
-      var navLinks = document.querySelectorAll('nav a');
-
+      let toggle = document.querySelector('#toggle');
+      let menu = document.querySelector('#menu');
+      let navLinks = document.querySelectorAll('nav a');
       function resetNav() {
         menu.classList.remove('active');
       }
-
       navLinks[0].addEventListener("click", resetNav, false);
       navLinks[1].addEventListener("click", resetNav, false);
-
       toggle.addEventListener('click', function(){
         if (menu.classList.contains('active')) {
           menu.classList.remove('active');
+          this.classList.remove('margin');
           this.setAttribute('aria-expanded', 'false');
         } else {
           menu.classList.add('active');
+          this.classList.add('margin');
           this.setAttribute('aria-expanded', 'true');
           this.focus();
         }
