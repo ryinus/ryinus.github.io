@@ -429,26 +429,27 @@
     </footer>
 
     <script>
-      let toggle = document.querySelector('#toggle');
-      let menu = document.querySelector('#menu');
-      let navLinks = document.querySelectorAll('nav a');
+      const toggle = document.querySelector('#toggle');
+      const menu = document.querySelector('#menu');
+      const navLinks = document.querySelectorAll('nav a');
       function resetNav() {
-        menu.classList.remove('active');
+        menu.removeAttribute('class');
       }
       navLinks[0].addEventListener('click', resetNav, false);
       navLinks[1].addEventListener('click', resetNav, false);
-      toggle.addEventListener('click', function(){
+      toggle.addEventListener('click', function(event){
         if (menu.classList.contains('active')) {
-          menu.classList.remove('active');
-          this.classList.remove('margin');
+          menu.removeAttribute('class');
+          this.removeAttribute('class');
           this.setAttribute('aria-expanded', 'false');
+          this.blur();
         } else {
-          menu.classList.add('active');
-          this.classList.add('margin');
+          menu.setAttribute('class', 'active');
+          this.setAttribute('class', 'margin');
           this.setAttribute('aria-expanded', 'true');
           this.focus();
         }
-      });
+      }, false);
     </script>
     <noscript>
       <style>
