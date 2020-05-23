@@ -174,24 +174,7 @@
       }
 
       /* Medium Screens */
-      @media only screen and (min-width: 32em) {
-        #profile {
-          width: 23%
-        }
-      }
-
-      /* Medium Large Screens */
-      @media only screen and (min-width: 44em) {
-        .three-column div {
-          margin-bottom: 0
-        }
-        #profile {
-          width: 22%
-        }
-      }
-
-      /* Large Screens */
-      @media only screen and (min-width: 50em) {
+      @media only screen and (min-width: 35em) {
 
         body {
           margin-top: 0
@@ -259,6 +242,21 @@
           color: blue
         }
 
+        /* Images */
+        #profile {
+          width: 23%
+        }
+
+      }
+
+      /* Large Screens */
+      @media only screen and (min-width: 44em) {
+        .three-column div {
+          margin-bottom: 0
+        }
+        #profile {
+          width: 22%
+        }
       }
 
       /* Extra Large Screens */
@@ -428,17 +426,14 @@
     </footer>
 
     <script>
-      var toggle = document.querySelector('#toggle');
-      var menu = document.querySelector('#menu');
-      var navLinks = document.querySelectorAll('nav a');
-
+      let toggle = document.querySelector('#toggle');
+      let menu = document.querySelector('#menu');
+      let navLinks = document.querySelectorAll('nav a');
       function resetNav() {
         menu.classList.remove('active');
       }
-
       navLinks[0].addEventListener("click", resetNav, false);
       navLinks[1].addEventListener("click", resetNav, false);
-
       toggle.addEventListener('click', function(){
         if (menu.classList.contains('active')) {
           menu.classList.remove('active');
@@ -462,7 +457,7 @@
         main {
           margin-top: 9em
         }
-        @media only screen and (min-width: 50em) {
+        @media only screen and (min-width: 35em) {
           main {
             margin-top: 0
           }
