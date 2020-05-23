@@ -94,8 +94,11 @@
         }
         #toggle:focus {
           background: #333;
-          color: #FFF;
+          color: #FFF
         }
+        .margin {
+          margin-bottom: 1em
+	}
         nav ul {
           clear: both;
           display: none;
@@ -108,7 +111,7 @@
         nav ul li {
           font: 16px sans-serif;
           list-style-type: none;
-          margin: 1em 0
+          margin: 1.3em 0
         }
 
         /* Main Content */
@@ -437,9 +440,11 @@
       toggle.addEventListener('click', function(){
         if (menu.classList.contains('active')) {
           menu.classList.remove('active');
+          this.classList.remove('margin');
           this.setAttribute('aria-expanded', 'false');
         } else {
           menu.classList.add('active');
+          this.classList.add('margin');
           this.setAttribute('aria-expanded', 'true');
           this.focus();
         }
