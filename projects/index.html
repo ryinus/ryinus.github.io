@@ -786,6 +786,7 @@
     <script>
       const menu = document.querySelector('#menu');
       const navLinks = document.querySelectorAll('nav a');
+      const toTop = document.querySelector('#top');
       function resetNav(event) {
         menu.removeAttribute('class');
       }
@@ -810,8 +811,7 @@
           toggle.blur();
         }
       }, false);
-      top.addEventListener('click', function(event){
-        console.log('fired');
+      toTop.addEventListener('click', function(event){
         window.scrollTo(0, 0);
       }, false);
       window.addEventListener('scroll', function(event) {
